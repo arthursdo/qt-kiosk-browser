@@ -33,6 +33,10 @@ Window {
         interactive: false
 
         WebEngineView {
+            Component.onCompleted: {
+                proxyHandler.useSystemProxy()
+            }
+            
             id: webView
             backgroundColor: "black"
 

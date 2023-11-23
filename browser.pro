@@ -1,12 +1,13 @@
 TEMPLATE = app
 
-QT += qml quick core gui webengine webenginewidgets
+QT += qml quick core gui webengine webenginewidgets network
 
 CONFIG += c++11
 
 TARGET = qt-kiosk-browser
 
 HEADERS += \
+  proxyhandler.hpp \
   inputeventhandler.hpp \
   browser.hpp
 

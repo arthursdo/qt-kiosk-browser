@@ -9,6 +9,7 @@
 #include <QApplication>
 #include <QtWebEngine>
 
+#include "proxyhandler.hpp"
 #include "inputeventhandler.hpp"
 #include "browser.hpp"
 
@@ -27,6 +28,8 @@ int main(int argc, char *argv[])
     qmlRegisterType<InputEventHandler>("Browser", 1, 0, "InputEventHandler");
 
     QQmlApplicationEngine engine;
+    ProxyHandler proxyHandler;
+    engine.rootContext()->setContextProperty("proxyHandler", &proxyHandler);
     engine.load(QUrl(QStringLiteral("qrc:/qml/main.qml")));
 
     return app.exec();
